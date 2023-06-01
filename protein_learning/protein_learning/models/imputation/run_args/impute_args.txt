@@ -1,0 +1,60 @@
+#config path
+/home/mmcpartlon/ProteinLearning/protein_learning/models/imputation/run_args/global_config.txt
+
+######### Model Options #########
+--scalar_dim_hidden 120
+--pair_dim_hidden 120
+--evoformer_scalar_heads_n_dim 8 16
+--evoformer_pair_heads_n_dim 4 28
+--ipa_heads 8
+--ipa_head_dims 16 4
+--evoformer_depth 4
+--ipa_depth 4
+#--share_weights
+#--recompute_rigids
+
+
+######### Loss Options #########
+--unmasked_rel_weight 1
+--fape_wt 1
+--pred_lddt_wt 0.5
+--nsr_wt 0.5
+--tm_wt 0
+--dist_inv_wt 0.2
+--pair_dist_wt 1
+--fape_atom_tys CA
+
+
+######### Feature Options #########
+--use_dist
+--use_tr_ori
+--use_bb_dihedral
+
+######### Mask Options #########
+
+# What to mask
+--mask_feats
+--mask_seq
+# probability with which to mask sequence and features independently
+--mask_feat_n_seq_indep_prob 0
+
+# Spatial
+--spatial_mask_weight 1
+--spatial_mask_top_k 60
+--spatial_mask_max_radius 12
+
+# Contiguous
+--contiguous_mask_weight 0
+--contiguous_mask_min_len 5
+--contiguous_mask_max_len 60
+
+# Random
+--random_mask_weight 1
+--random_mask_min_p 0.1
+--random_mask_max_p 0.5
+
+# No Mask
+--no_mask_weight 1
+
+# Full Mask
+--full_mask_weight 0

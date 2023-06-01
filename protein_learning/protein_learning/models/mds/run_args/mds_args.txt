@@ -1,0 +1,31 @@
+#config path
+/home/mmcpartlon/ProteinLearning/protein_learning/models/mds/run_args/global_config.txt
+#atom types
+--atom_tys N CA C CB
+
+########## Model Args ##########
+--scalar_dim_hidden 100
+--pair_dim_hidden 100
+--evoformer_scalar_heads_n_dim 8 16
+--evoformer_pair_heads_n_dim 4 28
+--ipa_heads 8
+--ipa_head_dims 16 4
+--evoformer_depth 4
+--ipa_depth 3
+--use_ipa
+#--predict_rigids
+--detach_frames
+
+########## Feature Args ##########
+--use_dist
+--use_tr_ori
+--use_bb_dihedral
+
+########## Loss Args ##########
+--fape_wt 1
+--pair_wt 1
+--tm_wt 0
+--rmsd_wt 0
+--dist_wt 0.1
+#--lddt_wt 1
+#--nsr_wt 1

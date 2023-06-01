@@ -1,0 +1,37 @@
+--gpu_idx 3
+--stats_root /mnt/local/mmcpartlon/design/eval/casp_13_14_spatial_mask
+--n_cycles 5
+
+######### Dataset Loading #########
+--data_root /mnt/local/mmcpartlon/TrainTestData/test_data
+--data_list /mnt/local/mmcpartlon/TrainTestData/test_data/LISTS/casp_13_14.list
+--native_folder /mnt/local/mmcpartlon/TrainTestData/test_data/CASP/casp_13_14
+--seq_folder /mnt/local/mmcpartlon/TrainTestData/test_data/CASP/SEQ
+--max_samples 300
+
+
+
+######### Model Loading #########
+--config_root /mnt/local/mmcpartlon/design/models/params
+--model_config_paths mds_18_02_2022_18:24:56 mds_18_02_2022_18:25:35 mds_18_02_2022_18:26:07 mds_18_02_2022_18:28:09 mds_18_02_2022_18:26:52
+--model_names design_1_rx8_feb_21 design_2_rx8_feb_21 design_3_rx8_feb_21 design_1_rx11_feb_21 design_2_rx11_feb_21
+
+######### Mask Options #########
+
+# Spatial
+--spatial_mask_weight 1
+--spatial_mask_top_k 30
+--spatial_mask_max_radius 12
+
+# Contiguous
+--contiguous_mask_weight 0
+--contiguous_mask_min_len 5
+--contiguous_mask_max_len 60
+
+# Random
+--random_mask_weight 0
+--random_mask_min_p 1
+--random_mask_max_p 1
+
+# No Mask
+--no_mask_weight 0
